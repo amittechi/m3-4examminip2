@@ -26,3 +26,7 @@ jobs:
       - name: Run Training Script
         run: |
           python adultcensus_model/train_pipeline.py
+      - name: Run Evaluation Script
+        run: |
+          python adultcensus_model/evaluate.py
+
