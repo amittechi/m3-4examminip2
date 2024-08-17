@@ -1,0 +1,211 @@
+# Package Overview
+package_name: adultcensus_model
+
+# Data Files
+training_data_file: adult_census.csv
+test_data_file: test_adult_census.csv
+
+# Variables
+# The variable we are attempting to predict (Survival)
+target: class
+
+pipeline_name: adultcensus_model
+pipeline_save_file: adultcensus_model_output_v
+
+features:      # final features to be use
+  - age
+  - workclass
+  - fnlwgt
+  - education
+  - education-num
+  - marital-status
+  - occupation
+  - relationship
+  - race
+  - sex
+  - capital-gain
+  - capital-loss
+  - hours-per-week
+  - native-country
+
+num_features:
+  - age
+  - fnlwgt
+  - education-num
+  - capital-gain
+  - capital-loss
+  - hours-per-week
+
+cat_features:
+  - workclass
+  - education
+  - marital-status
+  - occupation
+  - relationship
+  - race
+  - sex
+  - native-country
+  
+unused_fields:  # Features to drop within pipeline
+  - fnlwgt
+
+# Features inside processing pipeline
+
+modeimputer_fields:   # mode imputatation 
+  - workclass
+  - occupation
+  - native-country
+
+binary_encode_fields:   # binary encoding fields 
+  - sex
+#  - class
+
+custom_encode_fields:   # custom encoding cat fields
+  - workclass
+  - education
+  - marital-status
+  - occupation
+  - relationship
+  - race
+  - native-country
+
+sex_var: sex
+class_var: class
+workclass_var: workclass
+education_var: education
+marital_status_var: marital-status
+occupation_var: occupation
+relationship_var: relationship
+race_var: race
+native_country_var: native-country
+
+
+sex_mappings:
+  Male: 0
+  Female: 1
+
+class_mappings:
+  "<=50K": 0
+  ">50K": 1
+
+education_mappings:
+  Preschool: 0
+  1st-4th: 1
+  5th-6th: 2
+  7th-8th: 3
+  9th: 4
+  10th: 5
+  11th: 6
+  12th: 7
+  HS-grad: 8
+  Bachelors: 9
+  Masters: 10
+  Doctorate: 11
+  Assoc-acdm: 12
+  Assoc-voc: 13
+  Prof-school: 14
+  Some-college: 15
+
+workclass_mappings:
+  Private: 0
+  Local-gov: 1
+  Self-emp-not-inc: 2
+  Federal-gov: 3
+  State-gov: 4
+  Self-emp-inc: 5
+  Without-pay: 6
+  Never-worked: 7
+
+marital_status_mappings:
+  Never-married: 0
+  Married-civ-spouse: 1
+  Widowed: 2
+  Divorced: 3
+  Separated: 4
+  Married-spouse-absent: 5
+  Married-AF-spouse: 6
+
+occupation_mappings:
+  Machine-op-inspct: 0
+  Farming-fishing: 1
+  Protective-serv: 2
+  Prof-specialty: 3
+  Other-service: 4
+  Craft-repair: 5
+  Adm-clerical: 6
+  Exec-managerial: 7
+  Tech-support: 8
+  Sales: 9
+  Priv-house-serv: 10
+  Transport-moving: 11
+  Handlers-cleaners: 12
+  Armed-Forces: 13
+
+relationship_mappings:
+  Own-child: 0
+  Husband: 1
+  Not-in-family: 2
+  Unmarried: 3
+  Wife: 4
+  Other-relative: 5
+
+race_mappings:
+  Black: 0
+  White: 1
+  Asian-Pac-Islander: 2
+  Other: 3
+  Amer-Indian-Eskimo: 4
+
+native_country_mappings:
+  United-States: 0
+  Peru: 1
+  Guatemala: 2
+  Mexico: 3
+  Dominican-Republic: 4
+  Ireland: 5
+  Germany: 6
+  Philippines: 7
+  Thailand: 8
+  Haiti: 9
+  El-Salvador: 10
+  Puerto-Rico: 11
+  Vietnam: 12
+  South: 13
+  Columbia: 14
+  Japan: 15
+  India: 16
+  Cambodia: 17
+  Poland: 18
+  Laos: 19
+  England: 20
+  Cuba: 21
+  Taiwan: 22
+  Italy: 23
+  Canada: 24
+  Portugal: 25
+  China: 26
+  Nicaragua: 27
+  Honduras: 28
+  Iran: 29
+  Scotland: 30
+  Jamaica: 31
+  Ecuador: 32
+  Yugoslavia: 33
+  Hungary: 34
+  Hong: 35
+  Greece: 36
+  Trinadad&Tobago: 37
+  Outlying-US(Guam-USVI-etc): 38
+  France: 39
+  Holand-Netherlands: 40
+
+
+# set train/test split
+test_size: 0.20
+
+# to set the random seed
+random_state: 42
+# alogrithm parameters
+n_estimators: 500
+max_depth: 10
+

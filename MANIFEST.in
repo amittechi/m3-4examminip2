@@ -1,0 +1,18 @@
+include *.txt
+include *.md
+include *.pkl
+recursive-include ./adultcensus_model *
+
+include adultcensus_model/datasets/adultcensus_model.csv
+include adultcensus_model/datasets/test.csv
+include adultcensus_model/trained_models/*.pkl
+include adultcensus_model/VERSION
+include adultcensus_model/config.yml
+
+include ./requirements/requirements.txt
+include ./requirements/test_requirements.txt
+exclude *.log
+exclude *.cfg
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
