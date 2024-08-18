@@ -59,7 +59,7 @@ jobs:
         python-version: '3.10'
     - uses: actions/download-artifact@v2
       with:
-        name: trained-pipeline
+        name: my-trained-pipeline
         path: adultcensus_model/trained_models
     - name: Install dependencies
       run: pip install -r requirements/test_requirements.txt
