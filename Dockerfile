@@ -1,10 +1,17 @@
-FROM python:3.9-slim
+# pull python base image
+FROM python:3.10
 
+# copy application files
+ADD . .
+
+# specify working directory
 WORKDIR /app
 
-COPY requirements/requirements.txt requirements/requirements.txt
-RUN pip install --no-cache-dir -r requirements/requirements.txt
+# update pip
+RUN pip install --upgrade pip
 
-COPY . .
+# install dependencies
+RUN pip install -r requirements.txt
 
+# start fastapi application
 CMD ["python", "adultcensus_model/train_pipeline.py"]

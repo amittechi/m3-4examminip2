@@ -61,8 +61,6 @@ jobs:
       with:
         name: my-trained-pipeline
         path: adultcensus_model/trained_models
-    - name: Install dependencies
-      run: pip install -r requirements/test_requirements.txt
       
     - name: Login to Docker hub
       env:
