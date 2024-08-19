@@ -11,7 +11,7 @@ WORKDIR /app
 RUN pip install --upgrade pip
 
 # install dependencies
-RUN pip install -r requirements.txt
+RUN pip install -r requirements/requirements.txt
 
-# start fastapi application
+# start training model
 CMD ["python", "adultcensus_model/train_pipeline.py"]
