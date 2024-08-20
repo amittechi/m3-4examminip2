@@ -5,13 +5,13 @@ FROM python:3.10
 ADD . .
 
 # specify working directory
-WORKDIR /app
+WORKDIR /adultcensus_model
 
 # update pip
 RUN pip install --upgrade pip
 
 # install dependencies
-RUN pip install -r requirements/requirements.txt
+RUN pip install -r ./../requirements/requirements.txt
 
 # start training model
-CMD ["python", "adultcensus_model/train_pipeline.py"]
+CMD ["python", "train_pipeline.py"]

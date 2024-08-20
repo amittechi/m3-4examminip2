@@ -71,7 +71,7 @@ jobs:
     - name: Build the Docker image for Adult Census Model app
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-      run: docker build . -f Dockerfile -t $DOCKER_USER/adultcensus-model-training:latest
+      run: docker build . -f Dockerfile.train -t $DOCKER_USER/adultcensus-model-training:latest
 
     - name: Push the Docker Image
       env:

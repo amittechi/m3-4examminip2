@@ -1,0 +1,11 @@
+uvicorn>=0.16.0,<0.18.0
+fastapi>=0.64.0,<1.0.0
+pydantic #>=1.8.1,<2.0.0
+requests>=2.23.0,<2.24.0
+python-multipart
+
+# If locally copied whl file inside bikeshare_model_api then use given below
+adultcensus_model-0.0.1-py3-none-any.whl
+
+# After uploding your package in PyPI use the given below
+#adultcensus-model==0.0.1
