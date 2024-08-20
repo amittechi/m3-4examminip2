@@ -128,8 +128,8 @@ jobs:
       
       - uses: actions/download-artifact@v2
         with:
-          name: my-trained-pipeline
-          path: adultcensus_model/trained_models
+          name: my-build-package
+          path: adultcensus_model_api
       
       - name: Login to Docker Hub
         env:
