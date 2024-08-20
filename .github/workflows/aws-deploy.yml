@@ -2,10 +2,10 @@ name: Adult Census Classification CD Pipeline
 
 # Only trigger when the build workflow succeeds, i.e., CI Pipeline
 on:
-  workflow_run:
-    workflows: ["Train Adult Census Classification Model"]
-    types:
-      - completed
+#   workflow_run:
+#     workflows: ["Train Adult Census Classification Model"]
+#     types:
+#       - completed
 
 jobs:
   build:
